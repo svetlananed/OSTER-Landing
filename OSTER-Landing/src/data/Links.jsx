@@ -1,31 +1,48 @@
 export const links = [
   {
-    name: "",
+    name: "Homepage",
     id: "home",
     type: "page",      // Home page
   },
   {
-    name: "",
+    name: "About us",
     id: "about",
     type: "page",      // Router page: /about
   },
   {
-    name: "",
-    id: "offer",
-    type: "section",   // On homepage dropdown 
+    name: "Services",
+    id: "services",
+    type: "page",   // On homepage dropdown 
     dropdown: [
-      { name: "", id: "", type: "section" },
-      { name: " ", id: "", type: "section" },
+      { name: "Web Development", id: "webdev", type: "section" },
+      { name: "Design", id: "design", type: "section" },
+      { name: "Marketing", id: "marketing", type: "section" },
     ],
   },
   {
-    name: "",
+    name: "Pricing",
     id: "pricing",
     type: "page",   // Router page: /pricing
   },
   {
-    name: "",
-    id: "contact",
+    name: "Projects",
+    id: "projects",
     type: "page",      // Router page: /contact
   },
+  {
+    name: "Blog",
+    id: "blog",
+    type: "page",      // Router page: /contact
+  },
+  {
+    name: "Tools",
+    id: "tools",
+    type: "page", 
+    dropdown: [
+      { name: "Calculator", id: "calculator" },
+      { name: "Parser", id: "parser" }, // Router page: /contact
+    ]     
+  },
 ];
+
+

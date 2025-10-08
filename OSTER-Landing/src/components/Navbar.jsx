@@ -1,10 +1,10 @@
 import { links } from "../data/Links";
 
-function Footer () {
+function Navbar () {
     return (
         <>
         </>
     )
 }
 
-export default Footer
+export default Navbar;
