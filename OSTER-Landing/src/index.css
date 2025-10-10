@@ -20,7 +20,7 @@
 @layer utilities {
 
   .header-container {
-    @apply flex justify-between items-center mx-auto h-15 
+    @apply flex justify-between items-center mx-auto fixed top-0 left-0 right-0 h-15 
       max-w-[320px] px-[20px]  
       sm:max-w-[640px] sm:px-[20px] 
       md:max-w-[768px] 
