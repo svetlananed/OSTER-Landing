@@ -1,6 +1,7 @@
 import { links } from "../data/Links";
 import { NavLink } from "react-router-dom";
-import logo from '../assets/img/logo.png'
+import logodark from '../assets/img/logodark.png'
+import logolight from '../assets/img/logolight.png'
 
 function Footer () {
     const mainLinks = links.filter(link => !link.dropdown && link.id !== "home");
@@ -29,10 +30,7 @@ function Footer () {
                     
                     {/* Logo */}
                     <div className="hidden sm:flex">
-                        <NavLink
-                        to="/">
-                            <img src={logo} className="h-10"/>
-                        </NavLink>
+                        
                         
                     </div>
 
@@ -40,7 +38,7 @@ function Footer () {
                     <div className="flex flex-row sm:flex-col flex-wrap justify-center">
                         {mainLinks.map((link, index) =>
                             !link.dropdown && link.id !== "home" ? (
-                                <div>
+                                <div key={link.id}>
                                     <NavLink
                                     key={link.id}
                                     to={`/${link.id}`}
@@ -62,7 +60,7 @@ function Footer () {
                     {/* Links to Subdomains */}
                     <div className="flex flex-row sm:flex-col flex-wrap justify-center">
                         {dropdownItems.map((item, index) =>
-                            <div>
+                            <div key={`${item.parentId}-${item.id}`}>
                                 <NavLink
                                     to={`/${item.parentId}/${item.name}`}>
                                     {item.name}

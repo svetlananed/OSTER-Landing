@@ -1,7 +1,7 @@
 function Home() {
     return (
         <>
-        <div className="section-container first-section-spacing flex flex-col justify-between bg-white/50">
+        <div className="section-container first-section-spacing flex flex-col justify-between bg-amber-300">
             <p>asfdgh</p>
             <p>asfdgh</p>
 

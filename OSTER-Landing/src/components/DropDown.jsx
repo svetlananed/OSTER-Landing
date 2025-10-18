@@ -1,25 +1,24 @@
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { links } from "../data/Links";
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { Triangle } from "lucide-react";
 
 function DropDown ( { link }) {
     const [openDropdown, setOpenDropdown] = useState(null);
 
     return (
         <>
-            <div className="relative"
+            <div className="relative group"
                 onMouseEnter={() => setOpenDropdown(link.id)}
                 onMouseLeave={() => setOpenDropdown(null)}
             >   
                 <NavLink
                     to={`${link.id}`}
-                    className="flex h-full items-center gap-1 uppercase">
+                    className="flex relative h-full items-center gap-2 uppercase dark:text-white dark:hover:text-white dark:hover:drop-shadow-[0_0_5px_#22d3ee,0_0_20px_#22d3ee,0_0_40px_#22d3ee] hover:text-slate-500">
                         <span>{link.name}</span>
-                        <ChevronDown size={20} />
+                        <Triangle size={10} className="inline-block rotate-180 group-hover:fill-current transition-transform" />
                 </NavLink>
 
-                <div className={`absolute top-full left-0 w-60 bg-[#111111] transition-all duration-200 z-10
+                <div className={`absolute top-full left-0 w-60 bg-[#111111] transition-all z-10
                     ${openDropdown === link.id ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
                     <ul className="flex flex-col px-5 py-2">

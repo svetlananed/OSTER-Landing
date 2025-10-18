@@ -11,9 +11,15 @@
 @layer base {
   body {
     @apply 
-      bg-black 
-      text-white 
+      bg-white 
+      text-black 
       font-sans;
+  }
+
+  .dark body {
+    @apply 
+      bg-black 
+      text-white;
   }
 };
 
@@ -30,17 +36,19 @@
   }
 
   .section-spacing {
-    @apply mt-[40px] 
-      sm:mt-[60px] 
-      lg:mt-[100px] 
-      xl:mt-[120px];
+    @apply mt-[20px] 
+      sm:mt-[30px] 
+      md:mt-[40px] 
+      lg:mt-[50px] 
+      xl:mt-[60px];
   }
 
   .first-section-spacing {
-  @apply mt-[100px] 
-      sm:mt-[120px] 
-      lg:mt-[160px] 
-      xl:mt-[180px];
+  @apply mt-[80px] 
+      sm:mt-[90px] 
+      md:mt-[100px] 
+      lg:mt-[110px] 
+      xl:mt-[120px];
   }
 
 }
