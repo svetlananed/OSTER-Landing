@@ -29,7 +29,6 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path='/blog' element={<Blog />} />
             <Route path="/tools" element={<Tools />} />
-           
           </Routes>
         </main>
         

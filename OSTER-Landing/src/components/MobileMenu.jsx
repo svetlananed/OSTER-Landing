@@ -1,22 +1,9 @@
 import { links } from "../data/Links";
 import { NavLink } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
 import ContactBtn from "./ContactBtn";
 
 function MobileMenu ({ isMenuOpen, setMenuOpen, accordionOpen, setAccordionOpen }) {
-
-useEffect(() => {
-const isMobile = window.innerWidth < 1024;
-
-    if (isMenuOpen && isMobile) {
-        document.body.style.overflow = "hidden";
-    } else {
-        document.body.style.overflow = "";
-        setAccordionOpen(null);
-    }
-    }, [isMenuOpen]);
-    
     
     return (
         <>

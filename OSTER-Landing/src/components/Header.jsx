@@ -31,18 +31,29 @@ window.addEventListener("scroll", handleScroll);
 return () => window.removeEventListener("scroll", handleScroll);
 }, [isMenuOpen]);
 
+useEffect(() => {
+const isMobile = window.innerWidth < 1024;
+
+    if (isMenuOpen && isMobile) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
+        setAccordionOpen(null);
+    }
+    }, [isMenuOpen]);
+
     return (
         <>
             <header className="relative z-50">
                 {/* Desktop menu */}
                 <div 
                     className={`flex justify-between items-center mx-auto fixed top-0 left-0 right-0 h-15
-                        max-w-[320px] px-5
-                        sm:max-w-[640px] sm:px-5
-                        md:max-w-[768px] md:px-6
-                        lg:max-w-[1024px] lg:px-10
-                        xl:max-w-[1280px] xl:px-16
-                        2xl:max-w-[1536px] 2xl:px-24
+                        max-w-[320px] px-[20px] 
+                        sm:max-w-[640px] sm:px-[30px]
+                        md:max-w-[768px]
+                        lg:max-w-[1024px] lg:px-[40px]
+                        xl:max-w-[1280px] xl:px-[50px]
+                        2xl:max-w-[1536px] 2xl:px-[60px];
                         bg-blue-400 transition-transform duration-500 ease-in-out
                         ${isVisible ? "translate-y-0" : "-translate-y-full"}
                     `}>
