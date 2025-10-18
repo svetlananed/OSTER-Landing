@@ -19,16 +19,6 @@
 
 @layer utilities {
 
-  .header-container {
-    @apply flex justify-between items-center mx-auto fixed top-0 left-0 right-0 h-15 
-      max-w-[320px] px-[20px]  
-      sm:max-w-[640px] sm:px-[20px] 
-      md:max-w-[768px] 
-      lg:max-w-[1024px]
-      xl:max-w-[1280px] xl:px-[60px] 
-      2xl:max-w-[1536px] 2xl:px-[100px] 
-  }
-
   .section-container {
     @apply mx-auto w-full 
       max-w-[320px] h-[778px] px-[20px] pt-[30px] pb-[40px] 
