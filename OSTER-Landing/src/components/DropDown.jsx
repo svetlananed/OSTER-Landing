@@ -18,10 +18,10 @@ function DropDown ( { link }) {
                         <Triangle size={10} className="inline-block rotate-180 group-hover:fill-current transition-transform" />
                 </NavLink>
 
-                <div className={`absolute top-full left-0 w-60 bg-[#111111] transition-all z-10
+                <div className={`absolute top-full left-0 w-50 2xl:w-60 transition-all z-10
                     ${openDropdown === link.id ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
-                    <ul className="flex flex-col px-5 py-2">
+                    <ul className="flex flex-col px-5 py-2 border-l-3 rounded-br-lg border-black dark:border-cyan-300 bg-white dark:bg-black">
                         {link.dropdown.map((item, index) => (
                             <li key={item.id}
                                 className="flex flex-col gap-2  ">
@@ -29,13 +29,13 @@ function DropDown ( { link }) {
                                     to={`/${link.id}/${item.id}`}
                                     onClick={() => setOpenDropdown(null)}
                                     className={({ isActive }) =>
-                                    `${isActive ? "text-red-400" : "hover:text-red-300"}
+                                    `${isActive ? "text-rose-500 dark:text-cyan-300" : "hover:text-slate-500 dark:hover:text-cyan-200"}
                                     py-2`}
                                 >
                                     {item.name}
                                 </NavLink>
                                 {index !== link.dropdown.length - 1 && (
-                                    <hr className="border-t border-white/10" />
+                                    <hr className="border-t border-black/10 dark:border-white/10" />
                                 )}
                                 
                             </li>

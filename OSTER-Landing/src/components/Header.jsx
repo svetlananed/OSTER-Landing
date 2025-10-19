@@ -50,7 +50,8 @@ const isMobile = window.innerWidth < 1024;
             <header className="relative z-50 ">
                 {/* Desktop menu */}
                 <div 
-                    className={`flex justify-between items-center mx-auto fixed top-0 left-0 right-0 h-25 bg-white dark:bg-black
+                    className={`flex justify-between items-center mx-auto fixed top-0 left-0 right-0 bg-white dark:bg-black
+                        h-[50px] sm:h-[60px] lg:h-[70px] 2xl:h-[100px]
                         max-w-[320px] px-[20px] 
                         sm:max-w-[640px] sm:px-[30px]
                         md:max-w-[768px]
@@ -63,7 +64,7 @@ const isMobile = window.innerWidth < 1024;
                         to="/">
                         <img src={theme === "dark" ? logodark : logolight} alt="Logo" className="h-10 xl:h-16 2xl:h-20"/>
                     </NavLink>
-                    <nav className="hidden lg:flex gap-5 h-20 cursor-pointer">
+                    <nav className="hidden lg:flex gap-5 cursor-pointer ">
                         <Navbar />
 
                         {/* Switch Language */}
@@ -75,16 +76,22 @@ const isMobile = window.innerWidth < 1024;
                         </div>
                         
                         {/*Switch Theme*/}
-                        <div className="flex items-center justify-center h-full transition ease-in-out  " 
+                        <div className="flex items-center justify-center transition ease-in-out  " 
                             onClick={toggleTheme}>
                                 {theme === "light" ? 
                                 <img src={toggleNight} 
-                                    className="h-6 "/> : 
+                                    className="h-4 2xl:h-6 "/> : 
                                 <img src={toggleDay} 
-                                    className="h-6 "/>}
+                                    className="h-4 2xl:h-6 "/>}
+                        </div>
+                        <div className=" flex items-center justify-center">
+                            <ContactBtn 
+                                message={"Contact us"}
+                                fontClass={"text-sm 2xl:text-base px-3 py-2 2xl:ml-2"}
+                                />
                         </div>
 
-                        <ContactBtn />
+                        
                     </nav>
                     <div className="flex lg:hidden">
                         <BurgerBtn 

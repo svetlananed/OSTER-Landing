@@ -35,21 +35,47 @@
       2xl:max-w-[1536px] 2xl:h-[859px] 2xl:p-[60px];
   }
 
+    .section-container-large {
+    @apply mx-auto w-full 
+      max-w-[320px]  px-[20px] 
+      sm:max-w-[640px]  sm:px-[30px]
+      md:max-w-[768px] 
+      lg:max-w-[1024px]  lg:px-[40px]
+      xl:max-w-[1280px]  xl:px-[50px]
+      2xl:max-w-[1536px]  2xl:px-[60px];
+  }
+
   .section-spacing {
     @apply mt-[20px] 
       sm:mt-[30px] 
       md:mt-[40px] 
-      lg:mt-[50px] 
+      lg:mt-[40px] 
       xl:mt-[60px];
   }
 
   .first-section-spacing {
-  @apply mt-[80px] 
+  @apply mt-[70px] 
       sm:mt-[90px] 
       md:mt-[100px] 
       lg:mt-[110px] 
       xl:mt-[120px];
   }
+
+  .title-settings {
+    @apply text-5xl text-center uppercase mt-20
+  }
+
+  .text-main {
+    @apply 
+    text-2xl
+  }
+
+  .large-shadow {
+    @apply 
+    dark:drop-shadow-[0_0_20px_#22d3ee,0_0_40px_#22d3ee,0_0_60px_#22d3ee]
+    drop-shadow-[0_0_20px_#4c5a6d,0_0_40px_#4c5a6d,0_0_60px_#4c5a6d]
+  }
+
 
 }
 

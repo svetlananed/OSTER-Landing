@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Navbar () {
     return (
         <>
-            <div className="flex gap-5 text-lg font-semibold">
+            <div className="hidden lg:flex gap-4 2xl:gap-5 text-xs lg:text-sm 2xl:text-base ">
                 {links.map((link) =>
                     link.dropdown ? (
                         <DropDown
@@ -17,8 +17,9 @@ function Navbar () {
                             key={link.id}
                             to={link.id === "home" ? "/" : `/${link.id}`}
                             className={({ isActive }) => 
-                                `${isActive ? "dark:text-cyan-300" : ""
-                                } h-full flex items-center uppercase cursor-pointer  dark:hover:text-white dark:hover:drop-shadow-[0_0_5px_#22d3ee,0_0_20px_#22d3ee,0_0_40px_#22d3ee] hover:text-slate-500`
+                                `${isActive ? "text-fuchsia-600 dark:text-cyan-300" : ""
+                                } 
+                                h-full flex items-center uppercase cursor-pointer  dark:hover:text-white dark:hover:drop-shadow-[0_0_5px_#22d3ee,0_0_20px_#22d3ee,0_0_40px_#22d3ee] hover:text-slate-500`
                             }
                         >
                             {link.name}

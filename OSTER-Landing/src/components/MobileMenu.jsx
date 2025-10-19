@@ -8,7 +8,8 @@ function MobileMenu ({ isMenuOpen, setMenuOpen, accordionOpen, setAccordionOpen 
     return (
         <>
             <nav
-                className={`lg:hidden fixed left-0 right-0 mx-auto top-15 bottom-0 bg-stone-950/95 transition-all duration-300 ease-in-out 
+                className={`lg:hidden fixed left-0 right-0 mx-auto bottom-0 bg-stone-950/95 transition-all duration-300 ease-in-out 
+                    top-[50px] sm:top-[60px] 
                     max-w-[320px] 
                     sm:max-w-[640px]  
                     md:max-w-[768px]
