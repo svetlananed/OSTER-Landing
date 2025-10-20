@@ -3,7 +3,8 @@ function OsterPower({ titleImg, text }) {
         <div
         className="border relative group rounded-lg h-30 w-70 flex items-center justify-center text-2xl
         border-slate-300 dark:border-slate-950
-        bg-slate-200 dark:bg-transparent dark:hover:bg-cyan-950/30 hover:border-fuchsia-500 dark:hover:border-cyan-950
+        bg-slate-200 dark:bg-transparent hover:bg-fuchsia-950/10 dark:hover:bg-cyan-950/30 
+        hover:border-fuchsia-600/20 dark:hover:border-cyan-950
         transition-all duration-300 overflow-hidden"
         >
         {/* Image */}

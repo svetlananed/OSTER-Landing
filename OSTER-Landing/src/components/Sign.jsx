@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { steps } from "../data/Steps"
 import cord from "../assets/img/cord.png"
+import cordBlue from "../assets/img/cord-blue.png"
+import interface1 from "../assets/img/interface.png"
+import interface2 from "../assets/img/interface2.png"
 
 function Sign () {
     const [selected, setSelected] = useState(steps[0]?.number || null);
@@ -18,14 +21,32 @@ function Sign () {
                             className="flex flex-row gap-5 cursor-pointer relative"
                             onClick={() => setSelected(item.number)}
                         >
-                            <div className={`group flex items-center justify-center overflow-hidden rounded-xl h-20 w-90 
-                                ${selected === item.number ? "bg-black text-[#f6f54f] border-[#f6f54f] border hover:bg-[#101314]" : "border border-slate-300 dark:border-slate-900" }
+                            {/* Name */}
+                            <div className={`group flex items-center justify-center overflow-hidden rounded-xl border h-20 w-90 
+                                ${selected === item.number ? 
+                                    "bg-slate-200 dark:bg-black text-[#2d98a8] dark:text-[#f6f54f] border-3 dark:border-1 border-[#1cc0d9] dark:border-[#f6f54f] hover:bg-[#e1f4f7] dark:hover:bg-[#101314]" 
+                                    : 
+                                    "border-slate-300 dark:border-slate-900 hover:bg-slate-100 dark:hover:bg-black" }
                             `}>
                                 <div className={`
-                                    ${selected === item.number ? "" : "dark:group-hover:drop-shadow-[0_0_20px_#22d3ee,0_0_40px_#22d3ee,0_0_60px_#22d3ee] group-hover:drop-shadow-[0_0_20px_#4c5a6d,0_0_40px_#4c5a6d,0_0_60px_#4c5a6d]" }
+                                    ${selected === item.number ? "" 
+                                        : 
+                                        "dark:group-hover:drop-shadow-[0_0_20px_#22d3ee,0_0_30px_#22d3ee,0_0_40px_#22d3ee] " }
                                 `}>
                                     {item.name}
                                 </div>
+                            </div>
+
+                            {/* Number */}
+                            <div className={`group flex items-center justify-center overflow-hidden rounded-xl border h-20 w-20
+                                ${selected === item.number ? 
+                                    "bg-slate-200 dark:bg-black text-[#2d98a8] dark:text-[#f6f54f] border-3 border-[#1cc0d9] dark:border-1 dark:border-[#f6f54f] hover:bg-[#e1f4f7] dark:hover:bg-[#101314]" : "border-slate-300 dark:border-slate-900 hover:bg-slate-100 dark:hover:bg-black" }
+                            `}>
+                                <div className={`
+                                    ${selected === item.number ? "" : "dark:group-hover:drop-shadow-[0_0_15px_#22d3ee,0_0_20px_#22d3ee,0_0_30px_#22d3ee] " }
+                                `}>
+                                        {item.number}
+                                </div> 
                             </div>
 
                             {/* Cord */}
@@ -34,26 +55,15 @@ function Sign () {
                                     <img
                                         src={cord}
                                         alt="cord"
-                                        className={Number(selected) <= 4 ? "" : "-translate-y-[168px] scale-y-[-1]"}
+                                        className={`absolute opacity-0 dark:opacity-100 ${Number(selected) <= 4 ? "" : "-translate-y-[168px] scale-y-[-1]"}`}
+                                    />
+                                    <img
+                                        src={cordBlue}
+                                        alt="cord"
+                                        className={`absolute opacity-100 dark:opacity-0 ${Number(selected) <= 4 ? "" : "-translate-y-[168px] scale-y-[-1]"}`}
                                     />
                                 </div>
                             )}
-
-                            <div className={`flex items-center justify-center border  rounded-xl h-20  w-20
-                                
-                                ${selected === item.number ? 
-                                    "bg-black text-[#f6f54f] border-[#f6f54f] border hover:bg-[#101314]" 
-                                    : 
-                                    "hover:bg-cyan-950/40 border-slate-300 dark:border-slate-900"}
-                                `}>
-                                <div className={
-                                `
-                                leading-none`}>
-                                    {item.number}
-                                </div>
-
-                                
-                            </div>
                             
                         </div>
                     ))}
@@ -67,19 +77,27 @@ function Sign () {
                         if (!step) return null;
 
                         return (
-                            <div className="   bg-black drop-shadow-[0_0_20px_#6e6d22] rounded-xl p-[60px] h-full flex flex-col gap-5">
+                            <div className="rounded-xl p-[60px] h-full flex flex-col gap-5
+                                bg-slate-200 dark:bg-black 
+                                drop-shadow-[0_0_20px_#36b3c6] dark:drop-shadow-[0_0_20px_#6e6d22] ">
+                                
                                 {/* Number */}
-                                <div className="text-4xl  text-[#f6f54f]">
+                                <div className="text-4xl text-[#2d98a8] dark:text-[#f6f54f]">
                                     {step.number}
                                 </div>
+                                
                                 {/* Title */}
-                                <div className="text-2xl  text-[#f6f54f]">
+                                <div className="text-2xl text-[#2d98a8] dark:text-[#f6f54f]">
                                     {step.name}
                                 </div>
+                                
                                 {/* Description */}
                                 <div className="text-xl leading-relaxed">
                                     {step.description}
                                 </div>
+
+                                <img src={interface1} className="dark:hidden"/>
+                                <img src={interface2} className="hidden dark:block"/>
                             </div>
                         );
                     })()}
