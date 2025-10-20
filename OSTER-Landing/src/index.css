@@ -62,7 +62,7 @@
   }
 
   .title-settings {
-    @apply text-5xl text-center uppercase mt-20
+    @apply text-5xl text-center uppercase mt-20 py-10
   }
 
   .text-main {
