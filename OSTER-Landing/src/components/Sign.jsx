@@ -96,7 +96,7 @@ function Sign () {
                                     {step.description}
                                 </div>
 
-                                <img src={interface1} className="dark:hidden"/>
+                                <img src={interface1} className="hidden dark:hidden"/>
                                 <img src={interface2} className="hidden dark:block"/>
                             </div>
                         );
