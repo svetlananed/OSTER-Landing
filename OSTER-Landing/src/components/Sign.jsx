@@ -2,8 +2,7 @@ import { useState } from "react";
 import { steps } from "../data/Steps"
 import cord from "../assets/img/cord.png"
 import cordBlue from "../assets/img/cord-blue.png"
-import interface1 from "../assets/img/interface.png"
-import interface2 from "../assets/img/interface2.png"
+
 
 function Sign () {
     const [selected, setSelected] = useState(steps[0]?.number || null);
@@ -77,28 +76,33 @@ function Sign () {
                         if (!step) return null;
 
                         return (
-                            <div className="rounded-xl p-[60px] h-full flex flex-col gap-5
-                                bg-slate-200 dark:bg-black 
-                                drop-shadow-[0_0_20px_#36b3c6] dark:drop-shadow-[0_0_20px_#6e6d22] ">
+                            <div className="relative h-full">
                                 
-                                {/* Number */}
-                                <div className="text-4xl text-[#2d98a8] dark:text-[#f6f54f]">
-                                    {step.number}
-                                </div>
-                                
-                                {/* Title */}
-                                <div className="text-2xl text-[#2d98a8] dark:text-[#f6f54f]">
-                                    {step.name}
-                                </div>
-                                
-                                {/* Description */}
-                                <div className="text-xl leading-relaxed">
-                                    {step.description}
+                                <div className="rounded-xl p-[60px] h-[650px] flex flex-col gap-5
+                                bg-slate-200 dark:bg-black drop-shadow-[0_0_20px_#36b3c6] dark:drop-shadow-[0_0_20px_#6e6d22]">
+                                    {/* Number */}
+                                    <div className="text-4xl text-[#2d98a8] dark:text-[#f6f54f]">
+                                        {step.number}
+                                    </div>
+                                    
+                                    {/* Title */}
+                                    <div className="text-2xl text-[#2d98a8] dark:text-[#f6f54f]">
+                                        {step.name}
+                                    </div>
+                                    
+                                    {/* Description */}
+                                    <div className="text-xl leading-relaxed">
+                                        {step.description}
+                                    </div>
                                 </div>
 
-                                <img src={interface1} className="hidden dark:hidden"/>
-                                <img src={interface2} className="hidden dark:block"/>
+                                <img src={step.image} 
+                                    alt={step.name} 
+                                    className="absolute left-1/2 -translate-x-1/2 bottom-0 object-contain w-auto h-[390px] rounded-xl 
+                                    drop-shadow-[0_0_20px_#36b3c6] dark:drop-shadow-[0_0_20px_#6e6d22] "/>
+                                
                             </div>
+                            
                         );
                     })()}
                 </div>
